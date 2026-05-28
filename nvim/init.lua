@@ -367,6 +367,7 @@ vim.lsp.enable({
 	"gopls",
 	"svelte",
 	"tailwindcss",
+	"vue_ls",
 	"vtsls",
 	"marksman",
 	"ty",
@@ -387,6 +388,34 @@ vim.lsp.config("tailwindcss", {
 			on_dir(vim.fs.dirname(root))
 		end
 	end,
+})
+
+vim.lsp.config("vtsls", {
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+	},
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vim.fn.stdpath("data")
+							.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+						languages = { "vue" },
+						configNamespace = "typescript",
+						enableForWorkspaceTypeScriptVersions = true,
+					},
+				},
+			},
+		},
+	},
 })
 
 vim.lsp.config("*", {
@@ -470,6 +499,7 @@ vim.pack.add({
 })
 
 local web_lsp_opts = {
+	"oxfmt",
 	"biome",
 	"prettier",
 	"prettierd",
