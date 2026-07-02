@@ -35,7 +35,7 @@
   { "value": "( ´｡- ᵕ •｡)︻┻┳══━一", "tags": ["happy", "sniper"] },
   { "value": "ᕙ(｡> ω <｡‶)ᕗ", "tags": ["happy", "flex"] },
   { "value": "| ´-ω･)︻┻┳══━一", "tags": ["peek", "sniper"] },
-  { "value": "(ᓀ‸ᓂ)", "tags": ["angry", "Azusa"] },
+  { "value": "(ᓀ‸ᓂ)", "tags": ["angry", "azusa"] },
   { "value": "─=≡Σ((( つ＞＜)つ", "tags": ["run"] },
   { "value": "(ﾒ￣▽￣)︻┳═一", "tags": ["gun"] },
   { "value": "(ﾒ` ﾛ ´)︻デ═一", "tags": ["gun"] },
@@ -55,5 +55,8 @@
   { "value": "Ｏ(≧▽≦)Ｏ", "tags": ["excited", "happy"] },
   { "value": "Ｏ(≧▽≦)Ｏ", "tags": ["excited", "happy"] },
   { "value": "s(・｀ヘ´・;)ゞ", "tags": ["angry"] },
-  { "value": "（▼へ▼メ）", "tags": ["angry"] }
+  { "value": "（▼へ▼メ）", "tags": ["angry"] },
+  { "value": "( ᗒ ᗣ ᗕ )՞", "tags": ["flustered"] },
+  { "value": "(⸝⸝꩜ ᯅ ꩜⸝⸝)", "tags": ["flustered"] },
+  { "value": "( ᗜ‸ᗜ )", "tags": ["eimi"] }
 ]
