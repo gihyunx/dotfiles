@@ -1,0 +1,122 @@
+[bar.default]
+start = [ "control-center", "workspaces", "media"  ]
+center = ["clock"]
+end = [ "volume", "network", "battery", "session" ]
+margin_edge = 0
+margin_ends = 0
+radius = 0
+widget_spacing = 16
+font_family = "SF Pro Display"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 961.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[shell]
+font_family = "SF Pro Display"
+setup_wizard_enabled = false
+show_location = false
+
+[shell.animation]
+speed = 2.0
+
+[shell.panel]
+transparency_mode     = "solid"  # solid | soft | glass; controls floating/centered opacity and card translucency
+borders               = true   # outline on floating/centered panel shells and section cards inside panels
+shadow                = true   # cast the global [shell.shadow] from panel surfaces
+launcher_placement       = "centered" # attached | floating | centered
+clipboard_placement      = "centered" # attached | floating | centered
+control_center_placement = "attached" # attached | floating | centered
+wallpaper_placement      = "attached" # attached | floating | centered
+session_placement        = "attached" # attached | floating | centered
+floating_offset          = 8           # px gap between a floating/detached panel and the bar edge
+open_near_click_control_center = false  # attached/floating: follow the bar click instead of bar-center
+open_near_click_launcher       = false  # attached/floating: follow the bar click instead of bar-center
+launcher_categories            = true   # show launcher category filters; Tab toggles them while open
+launcher_show_icons            = true   # show application icons in launcher results
+launcher_compact               = false  # smaller icons and tighter rows; hides subtitles
+launcher_app_grid              = false  # icon grid with labels underneath when results are apps only
+launcher_session_search        = false  # include session actions in general search, not only behind /session
+launcher_sort_by_usage         = false   # boost frequently used apps and show Recently Used filter
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+[wallpaper]
+directory = "/home/gihyun/.config/_wallpapers"
+
+    [wallpaper.default]
+    path = "/home/gihyun/.config/_wallpapers/kei-l2d.jpg"
+
+    [wallpaper.last]
+    path = "/home/gihyun/.config/_wallpapers/kei-l2d.jpg"
+
+[widget.clock]
+format = "{:%a, %b %d} - {:%-I:%M %p}"
+vertical_format = "{:%H\n%M}"
+tooltip_format = "{:%A, %B %d, %Y}"
+
+[widget.media]
+album_art_only = false
+art_size       = 24
+hide_when_no_media = true
+max_length = 200
+
+[widget.audio-vis]
+type       = "audio_visualizer"
+width      = 64
+bands      = 20
+centered   = true
+show_when_idle = false
+color_1 = "primary"
+color_2 = "secondary"
+
+[widget.workspaces]
+display = "none"
+
+[keybinds]
+cancel   = ["escape"]
+left     = ["left"]
+right    = ["right"]
+up       = ["ctrl+p"]
+down     = ["ctrl+n"]
+
+[nightlight]
+enabled = true
+force   = true
+
+temperature_day   = 4500
+temperature_night = 4000
+
+[weather]
+enabled = false
+
+[audio]
+enable_sounds = true
+sound_volume = 1.0
+notification_sound = "~/.config/_audio/mambo.wav"
