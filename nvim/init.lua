@@ -83,9 +83,12 @@ vim.keymap.set(
 -- Theme
 vim.pack.add({ "https://github.com/catppuccin/nvim", "https://github.com/wnkz/monoglow.nvim" })
 
+local primary = "#efaaa8"
+-- local primary = "#DAA69E"
+
 require("catppuccin").setup({
 	flavour = "mocha",
-	transparent_background = false,
+	transparent_background = true,
 	color_overrides = {
 		mocha = {
 			base = "#151414",
@@ -93,7 +96,7 @@ require("catppuccin").setup({
 			crust = "#1f1e1f",
 			mauve = "#c07d8f",
 			green = "#8F8898",
-			sky = "#DAA69E",
+			sky = primary,
 			sapphire = "#8F8898",
 			surface0 = "#2d2b2d",
 			surface1 = "#3e3a3e",
@@ -112,7 +115,7 @@ require("catppuccin").setup({
 require("monoglow").setup({
 	-- Change the "glow" color
 	on_colors = function(colors)
-		colors.glow = "#DAA69E"
+		colors.glow = primary
 	end,
 })
 
@@ -120,7 +123,7 @@ vim.cmd.colorscheme("catppuccin")
 vim.cmd(":hi statusline guibg=NONE")
 
 -- Change color of cursor when using insert mode
-vim.api.nvim_set_hl(0, "CursorInsert", { fg = "#DAA69E", bg = "#DAA69E" })
+vim.api.nvim_set_hl(0, "CursorInsert", { fg = primary, bg = primary })
 vim.opt.guicursor = {
 	"i-ci-ve:block-CursorInsert/lCursor",
 }
@@ -368,13 +371,14 @@ vim.lsp.enable({
 	"svelte",
 	"tailwindcss",
 	"vue_ls",
-	"vtsls",
+	"tsgo",
 	"marksman",
 	"ty",
 	"ruff",
 	"clangd",
 	"jdtls",
 	"phpactor",
+	"basedpyright",
 })
 
 vim.lsp.config("tailwindcss", {
@@ -440,6 +444,14 @@ vim.lsp.config("*", {
 	end,
 })
 
+-- Snippets
+vim.pack.add({
+	"https://github.com/rafamadriz/friendly-snippets",
+	{ src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
+})
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
 -- Autocomplete
 vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
@@ -464,19 +476,22 @@ require("blink.cmp").setup({
 		use_nvim_cmp_as_default = false,
 		nerd_font_variant = "mono",
 	},
-	signature = { enabled = true },
+	signature = { enabled = false },
 	completion = {
 		trigger = {
 			show_on_insert_on_trigger_character = false,
 		},
 		documentation = {
-			auto_show = true,
+			auto_show = false,
 			auto_show_delay_ms = 200,
 		},
 		list = {
 			selection = {
-				preselect = true,
+				preselect = false,
 			},
+		},
+		menu = {
+			auto_show = false,
 		},
 	},
 })
@@ -485,22 +500,14 @@ vim.pack.add({
 	"https://github.com/mfussenegger/nvim-jdtls",
 })
 
--- Snippets
-vim.pack.add({
-	"https://github.com/rafamadriz/friendly-snippets",
-	{ src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
-})
-
-require("luasnip.loaders.from_vscode").lazy_load()
-
 -- Formatting
 vim.pack.add({
 	"https://github.com/stevearc/conform.nvim",
 })
 
 local web_lsp_opts = {
-	"oxfmt",
 	"biome",
+	"oxfmt",
 	"prettier",
 	"prettierd",
 	stop_after_first = true,
@@ -564,3 +571,10 @@ vim.pack.add({
 })
 
 require("crates").setup()
+
+-- vim.pack.add({ "https://github.com/goerz/jupytext.nvim" })
+--
+-- require("jupytext").setup({
+-- 	format = "py:percent",
+-- 	filetype = "python",
+-- })
