@@ -413,7 +413,7 @@ binds {
     // Mod+R { spawn "rofi" "-show" "drun"; }
     Mod+B { spawn "zen-browser"; }
 
-    Mod+E { spawn "~/development/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
+    Mod+E { spawn "~/projects/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
     Mod+P { spawn-sh "noctalia msg panel-toggle session"; }
     // Mod+P { spawn "~/.config/_scripts/power-menu.sh"; }
     Mod+W { spawn-sh "noctalia msg panel-toggle control-center network"; }
