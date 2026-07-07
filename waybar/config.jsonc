@@ -51,23 +51,23 @@
         "num-tags": 9,
     },
     "clock": {
-        "format": "<span color='#DAA69E'>󰸗</span> {:%a, %b %d - <span color='#DAA69E'>󰥔</span> %I:%M %p}",
+        "format": "<span color='#efaaa8'>󰸗</span> {:%a, %b %d - <span color='#efaaa8'>󰥔</span> %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "<span color='#DAA69E'>󰻠</span> {usage}%",
+        "format": "<span color='#efaaa8'>󰻠</span> {usage}%",
         "tooltip": false,
         "interval": 1
     },
     "memory": {
         "interval": 1,
-        "format": "<span color='#DAA69E'>󰍛</span> {}%"
+        "format": "<span color='#efaaa8'>󰍛</span> {}%"
     },
     "temperature": {
         "interval": 1,
         "critical-threshold": 80,
-        "format": "<span color='#DAA69E'>{icon}</span> {temperatureC}°C",
+        "format": "<span color='#efaaa8'>{icon}</span> {temperatureC}°C",
         "format-icons": ["", "", ""]
     },
     "battery": {
@@ -76,7 +76,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "<span color='#DAA69E'>{icon}</span> {capacity}%",
+        "format": "<span color='#efaaa8'>{icon}</span> {capacity}%",
         "format-charging": "<span color='#887C8D'>󰂄</span> {capacity}%",
         "format-plugged": "<span color='#887C8D'>󰂄</span> {capacity}%",
         "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
@@ -84,7 +84,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "<span color='#DAA69E'>󰖩</span> {essid}",
+        "format-wifi": "<span color='#efaaa8'>󰖩</span> {essid}",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -93,7 +93,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span color='#DAA69E'>{icon}</span> {volume}%",
+        "format": "<span color='#efaaa8'>{icon}</span> {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
