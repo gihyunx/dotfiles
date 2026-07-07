@@ -678,3 +678,9 @@ window-rule {
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
 }
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+    draw-border-with-background false
+}
