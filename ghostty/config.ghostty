@@ -1,0 +1,72 @@
+shell-integration = fish
+command = fish -l
+
+font-family = Iosevka
+font-size = 16
+
+resize-overlay = never
+confirm-close-surface = false
+window-decoration = none
+
+keybind = clear
+
+background = #1a1111
+foreground = #c6c2c6
+background-opacity = 0.95
+background-opacity-cells = true
+gtk-single-instance = true
+
+shell-integration-features = no-cursor
+
+cursor-style = block
+cursor-style-blink = false
+cursor-color = #c6c2c6
+cursor-text = #1a1111
+
+# Selection
+selection-background = #7D8092
+selection-foreground = #151414
+
+# Color Palette (regular 0-7 + bright 8-15)
+palette = 0=#524343
+palette = 1=#ffb4ab
+palette = 2=#ffb3b2
+palette = 3=#e6bdbb
+palette = 4=#e4c18d
+palette = 5=#ffb3b2
+palette = 6=#e6bdbb
+palette = 7=#f0dedd
+
+palette = 8=#a08c8b
+palette = 9=#ffb4ab
+palette = 10=#ffb3b2
+palette = 11=#e6bdbb
+palette = 12=#e4c18d
+palette = 13=#ffb3b2
+palette = 14=#e6bdbb
+palette = 15=#f0dedd
+
+
+# palette = 0=#1d0c1d
+# palette = 1=#f38ba8
+# palette = 2=#7dc3ae
+# palette = 3=#7D8092
+# palette = 4=#8F8898
+# palette = 5=#AB9BA4
+# palette = 6=#ffb3b2
+# palette = 7=#c6c2c6
+#
+# palette = 8=#705c70
+# palette = 9=#f38ba8
+# palette = 10=#887C8D
+# palette = 11=#7D8092
+# palette = 12=#8F8898
+# palette = 13=#AB9BA4
+# palette = 14=#ffb3b2
+# palette = 15=#c6c2c6
+
+keybind = ctrl+==increase_font_size:1
+keybind = ctrl++=increase_font_size:1
+keybind = ctrl+-=decrease_font_size:1
+keybind = ctrl+0=reset_font_size
+keybind = ctrl+shift+enter=toggle_split_zoom
