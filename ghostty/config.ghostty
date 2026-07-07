@@ -10,6 +10,8 @@ window-decoration = none
 
 keybind = clear
 
+adjust-box-thickness = -1
+
 background = #1a1111
 foreground = #c6c2c6
 background-opacity = 0.95
