@@ -30,6 +30,12 @@ image/heif=imv.desktop
 x-scheme-handler/bruno=bruno.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 application/pdf=zen.desktop
+x-scheme-handler/pttp=CiscoPacketTracerPtsa-9.0.0.desktop
+application/x-pka=CiscoPacketTracer-9.0.0.desktop
+application/x-pkt=CiscoPacketTracer-9.0.0.desktop
+application/x-pkz=CiscoPacketTracer-9.0.0.desktop
+application/x-pksz=CiscoPacketTracer-9.0.0.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
