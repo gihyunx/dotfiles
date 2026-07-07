@@ -7,7 +7,7 @@ default-timeout=5000
 # Colors
 text-color=#c6c2c6FF
 background-color=#151414FF
-border-color=#DAA69EFF
+border-color=#efaaa8FF
 
 [urgency=critical]
 border-color=#c07d8fFF
