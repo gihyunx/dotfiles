@@ -106,5 +106,8 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export PATH "$HOME/go/bin" $PATH
 set --export PATH "/opt/lampp" $PATH
+set --export ENTE_CLI_SECRETS_PATH "$HOME/.ente-secrets.txt"
 
 source "$HOME/.cargo/env.fish"  # For fish
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
