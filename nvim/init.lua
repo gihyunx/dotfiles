@@ -82,8 +82,9 @@ vim.keymap.set(
 
 -- Theme
 vim.pack.add({ "https://github.com/catppuccin/nvim", "https://github.com/wnkz/monoglow.nvim" })
+vim.pack.add({ "https://github.com/RRethy/base16-nvim" })
 
-local primary = "#efaaa8"
+local primary = "#c8c3e2"
 -- local primary = "#DAA69E"
 
 require("catppuccin").setup({
@@ -91,10 +92,28 @@ require("catppuccin").setup({
 	transparent_background = true,
 	color_overrides = {
 		mocha = {
+			-- base = "#151414",
+			-- mantle = "#1a191a",
+			-- crust = "#1f1e1f",
+			-- mauve = "#c8c3e2",
+			-- green = "#8F8898",
+			-- sky = primary,
+			-- sapphire = "#8F8898",
+			-- surface0 = "#2d2b2d",
+			-- surface1 = "#3e3a3e",
+			-- surface2 = "#4f4c4f",
+			-- subtext0 = "#8F8898",
+			-- subtext1 = "#bfbbbf",
+			-- text = "#c6c2c6",
+			-- blue = "#e3bccf",
+			-- lavender = "#c6c2c6",
+			-- peach = "#ffb4ab",
+			-- yellow = "#AB9BA4",
+
 			base = "#151414",
 			mantle = "#1a191a",
 			crust = "#1f1e1f",
-			mauve = "#c07d8f",
+			mauve = "#9e87bf",
 			green = "#8F8898",
 			sky = primary,
 			sapphire = "#8F8898",
@@ -103,11 +122,31 @@ require("catppuccin").setup({
 			surface2 = "#4f4c4f",
 			subtext0 = "#8F8898",
 			subtext1 = "#bfbbbf",
-			text = "#c6c2c6",
-			blue = "#AB9BA4",
-			lavender = "#c6c2c6",
-			peach = "#93bdd2",
+			text = "#bcb8bc",
+			blue = "#a39dac",
+			lavender = "#bcb8bc",
+			peach = "#ccaac5",
 			yellow = "#AB9BA4",
+            maroon = primary,
+            red = "#b97ea1",
+
+			-- base = "#151414",
+			-- mantle = "#1a191a",
+			-- crust = "#1f1e1f",
+			-- mauve = "#c07d8f",
+			-- green = "#8F8898",
+			-- sky = primary,
+			-- sapphire = "#8F8898",
+			-- surface0 = "#2d2b2d",
+			-- surface1 = "#3e3a3e",
+			-- surface2 = "#4f4c4f",
+			-- subtext0 = "#8F8898",
+			-- subtext1 = "#bfbbbf",
+			-- text = "#c6c2c6",
+			-- blue = "#AB9BA4",
+			-- lavender = "#c6c2c6",
+			-- peach = "#93bdd2",
+			-- yellow = "#AB9BA4",
 		},
 	},
 })

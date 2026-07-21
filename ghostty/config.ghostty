@@ -3,6 +3,7 @@ command = fish -l
 
 font-family = Iosevka
 font-size = 16
+font-feature = -calt
 
 resize-overlay = never
 confirm-close-surface = false
@@ -12,9 +13,9 @@ keybind = clear
 
 adjust-box-thickness = -1
 
-background = #1a1111
-foreground = #c6c2c6
-background-opacity = 0.95
+background = #141313
+foreground = #bcb8bc
+background-opacity = 1.00
 background-opacity-cells = true
 gtk-single-instance = true
 
@@ -23,30 +24,40 @@ shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
 cursor-color = #c6c2c6
-cursor-text = #1a1111
+cursor-text = #181111
 
 # Selection
 selection-background = #7D8092
 selection-foreground = #151414
 
 # Color Palette (regular 0-7 + bright 8-15)
-palette = 0=#524343
-palette = 1=#ffb4ab
-palette = 2=#ffb3b2
-palette = 3=#e6bdbb
-palette = 4=#e4c18d
-palette = 5=#ffb3b2
-palette = 6=#e6bdbb
-palette = 7=#f0dedd
+# 
+# black
+# red
+# green
+# yellow
+# blue
+# magenta
+# cyan
+# white
 
-palette = 8=#a08c8b
-palette = 9=#ffb4ab
-palette = 10=#ffb3b2
-palette = 11=#e6bdbb
-palette = 12=#e4c18d
-palette = 13=#ffb3b2
-palette = 14=#e6bdbb
-palette = 15=#f0dedd
+palette = 0=#181212
+palette = 1=#b97ea1
+palette = 2=#7dc3ae
+palette = 3=#e4c18d
+palette = 4=#a18198
+palette = 5=#e6bdbb
+palette = 6=#ccaac5
+palette = 7=#bcb8bc
+
+palette = 8=#8F8898
+palette = 9=#b97ea1
+palette = 10=#7dc3ae
+palette = 11=#e4c18d
+palette = 12=#a18198
+palette = 13=#e6bdbb
+palette = 14=#ccaac5
+palette = 15=#bcb8bc
 
 
 # palette = 0=#1d0c1d
@@ -72,3 +83,5 @@ keybind = ctrl++=increase_font_size:1
 keybind = ctrl+-=decrease_font_size:1
 keybind = ctrl+0=reset_font_size
 keybind = ctrl+shift+enter=toggle_split_zoom
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+c=copy_to_clipboard:mixed
