@@ -8,11 +8,40 @@
  */
 
 /****************************************************************************
- * BetterZen                                                                *
- * "Ex nihilo nihil fit"                                                    *
- * version: 148                                                             *
+ * Betterfox                                                                *
+ * "Ad meliora"                                                             *
+ * version: 152                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
  ****************************************************************************/
+
+/****************************************************************************
+ * SECTION: FASTFOX                                                         *
+ ****************************************************************************/
+/** GENERAL ***/
+user_pref("gfx.content.skia-font-cache-size", 20);
+user_pref("content.notify.interval", 100000);
+
+/** GFX ***/
+user_pref("gfx.canvas.accelerated.cache-size", 512);
+
+/** JS ***/
+user_pref("javascript.options.baselinejit.threshold", 50);
+
+/** MEDIA CACHE ***/
+user_pref("media.cache_readahead_limit", 3600);
+user_pref("media.cache_resume_threshold", 1800);
+
+/** IMAGE CACHE ***/
+user_pref("image.mem.decode_bytes_at_a_time", 32768);
+
+/** NETWORKING ***/
+user_pref("network.buffer.cache.size", 65535);
+user_pref("network.buffer.cache.count", 48);
+user_pref("network.http.max-connections", 1800);
+user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
+user_pref("network.http.request.max-start-delay", 5);
+user_pref("network.dnsCacheExpiration", 3600);
 
 /****************************************************************************
  * SECTION: SECUREFOX                                                       *
@@ -41,7 +70,6 @@ user_pref("browser.sessionstore.interval", 60000);
 
 /** SHUTDOWN & SANITIZING ***/
 user_pref("privacy.history.custom", true);
-user_pref("browser.privatebrowsing.resetPBM.enabled", true);
 
 /** SPECULATIVE LOADING ***/
 user_pref("network.http.speculative-parallel-limit", 0);
@@ -130,14 +158,8 @@ user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.shell.checkDefaultBrowser", false);
-user_pref(
-  "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons",
-  false,
-);
-user_pref(
-  "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",
-  false,
-);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("browser.preferences.moreFromMozilla", false);
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.startup.homepage_override.mstone", "ignore");
@@ -150,6 +172,7 @@ user_pref("browser.compactmode.show", true);
 user_pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
 
 /** AI ***/
+user_pref("browser.ai.control.default", "blocked");
 user_pref("browser.ml.enable", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.ml.chat.menu", false);
@@ -179,39 +202,7 @@ user_pref("browser.download.open_pdf_attachments_inline", true);
 
 /** TAB BEHAVIOR ***/
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
-user_pref("browser.menu.showViewImageInfo", true);
 user_pref("findbar.highlightAll", true);
-user_pref("layout.word_select.eat_space_to_next_word", false);
-
-/****************************************************************************
- * START: ZEN-SPECIFIC OVERRIDES                                            *
- ****************************************************************************/
-// Remove the slashes to enable the prefs
-
-// PREF: re-enable Windows efficiency mode
-//user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", true);
-
-// PREF: disable new tab preload since they are off by default
-//user_pref("browser.newtab.preload", false);
-
-// PREF: show Enhance Tracking Protection shield in URL bar
-// Currently bugged if you click to view what's blocked
-//user_pref("zen.urlbar.show-protections-icon", true);
-
-// PREF: Disable the Picture in picture pop-out when changing tabs
-//user_pref("media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled", false);
-
-/****************************************************************************
- * START: MY OVERRIDES                                                      *
- ****************************************************************************/
-// visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
-// visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
-// Enter your personal overrides below this line:
-
-user_pref("ui.systemUsesDarkTheme", 1);
-// user_pref("gfx.webrender.all", true);
-// user_pref("layers.acceleration.force-enabled", true);
-// user_pref("nglayout.initialpaint.delay", 0);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
@@ -222,6 +213,36 @@ user_pref("ui.systemUsesDarkTheme", 1);
 // Then apply an example from Smoothfox
 // [3] https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
 // Enter your scrolling overrides below this line:
+
+user_pref("general.smoothScroll.msdPhysics.enabled", false);
+user_pref("general.smoothScroll.currentVelocityWeighting", "0.25");
+user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4f");
+user_pref("mousewheel.min_line_scroll_amount", 10);
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50);
+user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 120);
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 1250);
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 1000);
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
+
+user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
+user_pref("general.smoothScroll", true); // DEFAULT
+user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this number to your liking
+
+/****************************************************************************
+ * START: MY OVERRIDES                                                      *
+ ****************************************************************************/
+// visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
+// visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
+// Enter your personal overrides below this line:
+
+user_pref("ui.systemUsesDarkTheme", 1);
+user_pref("gfx.webrender.all", true);
+// user_pref("layers.acceleration.force-enabled", true);
+// user_pref("nglayout.initialpaint.delay", 0);
+
+// Zen
+user_pref("zen.workspaces.switch-animation-duration", 100);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
