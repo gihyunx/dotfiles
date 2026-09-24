@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.o.colorcolumn = "100"
 
 vim.o.guicursor = ""
-vim.o.tabstop = 4
+vim.o.tabstop = 8
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
@@ -84,7 +84,7 @@ vim.keymap.set(
 vim.pack.add({ "https://github.com/catppuccin/nvim", "https://github.com/wnkz/monoglow.nvim" })
 vim.pack.add({ "https://github.com/RRethy/base16-nvim" })
 
-local primary = "#c8c3e2"
+local primary = "#e3bccf"
 -- local primary = "#DAA69E"
 
 require("catppuccin").setup({
@@ -127,8 +127,8 @@ require("catppuccin").setup({
 			lavender = "#bcb8bc",
 			peach = "#ccaac5",
 			yellow = "#AB9BA4",
-            maroon = primary,
-            red = "#b97ea1",
+			maroon = primary,
+			red = "#b97ea1",
 
 			-- base = "#151414",
 			-- mantle = "#1a191a",
@@ -278,34 +278,50 @@ vim.keymap.set("n", "<leader>ft", todo_grep, {
 })
 
 -- Harpoon
-vim.pack.add({
-	"https://github.com/nvim-lua/plenary.nvim",
-	{
-		src = "https://github.com/ThePrimeagen/harpoon",
-		version = "harpoon2",
-	},
-})
+-- vim.pack.add({
+-- 	"https://github.com/nvim-lua/plenary.nvim",
+-- 	{
+-- 		src = "https://github.com/ThePrimeagen/harpoon",
+-- 		version = "harpoon2",
+-- 	},
+-- })
+--
+-- local harpoon = require("harpoon")
+-- harpoon:setup({
+-- 	settings = {
+-- 		save_on_toggle = true,
+-- 		sync_on_ui_close = true,
+-- 	},
+-- })
 
-local harpoon = require("harpoon")
-harpoon:setup({
-	settings = {
-		save_on_toggle = true,
-		sync_on_ui_close = true,
-	},
-})
+-- vim.keymap.set("n", "<leader>H", function()
+-- 	harpoon:list():add()
+-- end)
+-- vim.keymap.set("n", "<leader>h", function()
+-- 	harpoon.ui:toggle_quick_menu(harpoon:list())
+-- end, { desc = "[H]arpoon" })
+--
+-- -- Set <leader>1..<leader>5 as shortcuts to moving to the files
+-- for _, idx in ipairs({ 1, 2, 3, 4, 5 }) do
+-- 	vim.keymap.set("n", string.format("<leader>%d", idx), function()
+-- 		harpoon:list():select(idx)
+-- 	end)
+-- end
+
+local mini_harpoon = require("mini-harpoon")
 
 vim.keymap.set("n", "<leader>H", function()
-	harpoon:list():add()
+	mini_harpoon.add()
 end)
 vim.keymap.set("n", "<leader>h", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
+	mini_harpoon.menu()
 end, { desc = "[H]arpoon" })
 
 -- Set <leader>1..<leader>5 as shortcuts to moving to the files
 for _, idx in ipairs({ 1, 2, 3, 4, 5 }) do
 	vim.keymap.set("n", string.format("<leader>%d", idx), function()
-		harpoon:list():select(idx)
-	end)
+		mini_harpoon.select(idx)
+	end, { desc = string.format("Harpoon file %d", idx) })
 end
 
 -- mini.nvim
@@ -410,7 +426,7 @@ vim.lsp.enable({
 	"svelte",
 	"tailwindcss",
 	"vue_ls",
-	"tsgo",
+	"tsc",
 	"marksman",
 	"ty",
 	"ruff",
@@ -431,34 +447,6 @@ vim.lsp.config("tailwindcss", {
 			on_dir(vim.fs.dirname(root))
 		end
 	end,
-})
-
-vim.lsp.config("vtsls", {
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
-		"vue",
-	},
-	settings = {
-		vtsls = {
-			tsserver = {
-				globalPlugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = vim.fn.stdpath("data")
-							.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
-						languages = { "vue" },
-						configNamespace = "typescript",
-						enableForWorkspaceTypeScriptVersions = true,
-					},
-				},
-			},
-		},
-	},
 })
 
 vim.lsp.config("*", {
@@ -611,9 +599,8 @@ vim.pack.add({
 
 require("crates").setup()
 
--- vim.pack.add({ "https://github.com/goerz/jupytext.nvim" })
---
--- require("jupytext").setup({
--- 	format = "py:percent",
--- 	filetype = "python",
--- })
+vim.keymap.set("n", "<leader>tw", function()
+	local wrap = not vim.wo.wrap
+	vim.wo.wrap = wrap
+	vim.wo.linebreak = wrap
+end, { desc = "[T]oggle [W]ord Wrap" })
