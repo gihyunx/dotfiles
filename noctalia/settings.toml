@@ -1,5 +1,5 @@
 [bar.default]
-start = [ "control-center", "workspaces", "media"  ]
+start = [ "control-center", "workspaces" ]
 center = ["clock"]
 end = [ "volume", "network", "battery", "session" ]
 margin_edge = 0
