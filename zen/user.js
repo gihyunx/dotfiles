@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 152                                                             *
+ * version: 154                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
  ****************************************************************************/
 
@@ -23,9 +23,6 @@ user_pref("content.notify.interval", 100000);
 
 /** GFX ***/
 user_pref("gfx.canvas.accelerated.cache-size", 512);
-
-/** JS ***/
-user_pref("javascript.options.baselinejit.threshold", 50);
 
 /** MEDIA CACHE ***/
 user_pref("media.cache_readahead_limit", 3600);
@@ -105,9 +102,6 @@ user_pref("extensions.enabledScopes", 5);
 /** HEADERS / REFERERS ***/
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
 
-/** CONTAINERS ***/
-user_pref("privacy.userContext.ui.enabled", true);
-
 /** VARIOUS ***/
 user_pref("pdfjs.enableScripting", false);
 
@@ -145,10 +139,12 @@ user_pref("datareporting.usage.uploadEnabled", false);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
+user_pref("nimbus.rollouts.enabled", false);
 
 /** CRASH REPORTS ***/
 user_pref("breakpad.reportURL", "");
 user_pref("browser.tabs.crashReporting.sendReport", false);
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
 
 /****************************************************************************
  * SECTION: PESKYFOX                                                        *
@@ -207,27 +203,8 @@ user_pref("findbar.highlightAll", true);
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
  ****************************************************************************/
-// Reset Zen's custom scrolling prefs to their Firefox defaults before making changes!
-// [1] Zen changes: https://github.com/zen-browser/desktop/blob/3932ec21f5661440c4b20796f90341a6ac725818/src/browser/app/profile/zen-browser.js#L297-L312
-// [2] Firefox defaults: https://searchfox.org/mozilla-release/source/modules/libpref/init/StaticPrefList.yaml
-// Then apply an example from Smoothfox
-// [3] https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
+// visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
 // Enter your scrolling overrides below this line:
-
-user_pref("general.smoothScroll.msdPhysics.enabled", false);
-user_pref("general.smoothScroll.currentVelocityWeighting", "0.25");
-user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4f");
-user_pref("mousewheel.min_line_scroll_amount", 10);
-user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50);
-user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 120);
-user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 1250);
-user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 1000);
-user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
-user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
-
-user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
-user_pref("general.smoothScroll", true); // DEFAULT
-user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this number to your liking
 
 /****************************************************************************
  * START: MY OVERRIDES                                                      *
@@ -237,7 +214,8 @@ user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this
 // Enter your personal overrides below this line:
 
 user_pref("ui.systemUsesDarkTheme", 1);
-user_pref("gfx.webrender.all", true);
+// user_pref("gfx.webrender.all", true);
+// user_pref("gfx.webrender.enable-capture", false);
 // user_pref("layers.acceleration.force-enabled", true);
 // user_pref("nglayout.initialpaint.delay", 0);
 
