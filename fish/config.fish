@@ -104,6 +104,7 @@ starship init fish | source
 
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+set --export PATH "$HOME/.local/share/pnpm" $PATH
 set --export PATH "$HOME/go/bin" $PATH
 set --export PATH "/opt/lampp" $PATH
 set --export ENTE_CLI_SECRETS_PATH "$HOME/.ente-secrets.txt"
@@ -111,3 +112,21 @@ set --export ENTE_CLI_SECRETS_PATH "$HOME/.ente-secrets.txt"
 source "$HOME/.cargo/env.fish"  # For fish
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# kimi-code
+fish_add_path -g "/home/gihyun/.kimi-code/bin"
+
+# Qwen Code PATH block begin
+set -gx PATH '/home/gihyun/.local/bin' $PATH
+# Qwen Code PATH block end
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/gihyun/.local/bin" $PATH
+
+# pnpm
+set -gx PNPM_HOME '/home/gihyun/.local/share/pnpm'
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+  set -gx PATH "$PNPM_HOME/bin" $PATH
+end
+# pnpm end
